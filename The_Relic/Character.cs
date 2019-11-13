@@ -8,15 +8,15 @@ namespace The_Relic
 {
     class Character
     {
-        protected string name;
+        public string name;
 
         protected Inventory inventory;
 
-        protected int hp;
+        public int hp;
 
-        protected int mp;
+        public int mp;
 
-        protected int strenght;
+        public int strenght;
 
         public void AddToInventory(Item item)
         {
@@ -44,11 +44,10 @@ namespace The_Relic
         }
         public int GetHp()
         {
-
+            return hp;
         }
         public int ModifyHp(int amount)
         {
-
             hp += amount;
 
             return hp;
