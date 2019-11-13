@@ -10,9 +10,34 @@ namespace The_Relic
     {
         static void Main(string[] args)
         {
-            Hero theHero = new Hero();
+            Console.ForegroundColor = ConsoleColor.Gray;
 
-            Console.WriteLine(@"
+            Hero MyHero = new Hero();
+
+            GameTitel();
+
+            Console.WriteLine("You wake up from your slumber, you don't remeber anything exept that your name is\n");
+            Console.WriteLine("Name: ");
+            MyHero.name = Console.ReadLine();
+            Console.WriteLine(MyHero.name + " and that your mission is to protect the world");
+
+            Console.WriteLine("Before you there is a sword, you take it and it fuses with you");
+
+            Weapon BlackSword = new Weapon();
+
+            BlackSword.name = "Ancient Sword";
+            BlackSword.strenght = 50;
+            MyHero.AddToInventory(BlackSword);
+
+            Console.WriteLine("You feel a strong connection to this sword");
+            Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("*You aquired " + BlackSword.name + ", it's now added to you inventory*"); Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.ReadLine();
+        }
+
+        public static void GameTitel()
+        {
+                Console.WriteLine(@"
                 P
              P /\  P
             /\|  |/\
@@ -26,7 +51,7 @@ namespace The_Relic
      (       \::\/ -----___)
       (______  \/ _____)
 ");
-            Console.WriteLine(@"
+                Console.WriteLine(@"
 _________          _______    _______  _______  _       _________ _______ 
 \__   __/|\     /|(  ____ \  (  ____ )(  ____ \( \      \__   __/(  ____ \
    ) (   | )   ( || (    \/  | (    )|| (    \/| (         ) (   | (    \/
@@ -37,18 +62,19 @@ _________          _______    _______  _______  _       _________ _______
    )_(   |/     \|(_______/  |/   \__/(_______/(_______/\_______/(_______/
                                                                           
 ");
+            Console.WriteLine("Press any button to continue");
 
             Console.ReadLine();
-
-            Console.WriteLine("You woke up in a dark cave, you don't know why you are there but you know your name is...");
-
-            Hero.name = Console.ReadLine();
-
-            Console.WriteLine("You got up and walked to the entranced of the cave, it seemed to not be naturaly structured\n in front of the entrance a sword stod inpaled in a stoned");
-
-            Console.WriteLine("You took it");
-
-            Hero.AddToInventory();
         }
+
+        public static void first()
+        {
+
+        }
+
+
+
+            
+        
     }
 }
