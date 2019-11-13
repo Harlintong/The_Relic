@@ -8,11 +8,13 @@ namespace The_Relic
 {
     class Item
     {
-        protected string name;
+        public string name;
+
+        protected string description;
 
         public string GetInfo()
         {
-            return name;
+            return description;
         }
         public void Use(Character target)
         {
