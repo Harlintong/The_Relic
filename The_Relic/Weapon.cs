@@ -8,13 +8,15 @@ namespace The_Relic
 {
     class Weapon : Item
     {
+        public int strenght;
+
         public new string GetInfo()
         {
-            return name;
+            return description;
         }
-        public new void Use(Character target)
+        public new void Use(Hero target)
         {
-
+            strenght += target.strenght;
         }
     }
 }
