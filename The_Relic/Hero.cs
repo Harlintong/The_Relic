@@ -8,16 +8,17 @@ namespace The_Relic
 {
     class Hero : Character
     {
-        public new string name;
-
-        new int hp = 200;
-
-        new int mp = 100;
-
-        new int strenght = 20;
-
-        int exp = 0;
+        int xp = 0;
 
         int level = 1;
+
+        public Hero()
+        {
+            name = "ljböiu";
+
+            hp = 100;
+        }
+        
+
     }
 }
