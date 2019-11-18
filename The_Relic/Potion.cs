@@ -8,7 +8,12 @@ namespace The_Relic
 {
     class Potion : Item
     {
-        private int heal = 20;
+        public int heal;
+
+        public new string GetInfo()
+        {
+            return "Name: " + name + "\n Restore: " + heal;
+        }
 
         public void Use(Hero target)
         {
