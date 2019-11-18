@@ -10,11 +10,9 @@ namespace The_Relic
     {
         public string name;
 
-        protected string description;
-
         public string GetInfo()
         {
-            return description;
+            return name;
         }
         public void Use(Character target)
         {
