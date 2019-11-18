@@ -10,6 +10,8 @@ namespace The_Relic
     {
         private List<Item> items;
 
+        private string description;
+
         public void Add(Item item)
         {
 
@@ -20,9 +22,9 @@ namespace The_Relic
         }
         public string GetItemInfo(int n)
         {
-
+            return description;
         }
-        public void UseItem(int n, Character c)
+        public void UseItem(int n, Hero c)
         {
 
         }

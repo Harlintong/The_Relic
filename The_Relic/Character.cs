@@ -16,6 +16,8 @@ namespace The_Relic
 
         public int mp;
 
+        public int level;
+
         public int strenght;
 
         public void AddToInventory(Item item)
@@ -53,9 +55,17 @@ namespace The_Relic
             return hp;
 
         }
+        public void heal(int amount)
+        {
+
+        }
         public void Attack(Character target)
         {
 
+        }
+        public void Hurt(int amount)
+        {
+            hp -= amount;
         }
     }
 }

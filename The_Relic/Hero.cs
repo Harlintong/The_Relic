@@ -12,12 +12,7 @@ namespace The_Relic
 
         int level = 1;
 
-        public Hero()
-        {
-            name = "ljböiu";
 
-            hp = 100;
-        }
         
 
     }
