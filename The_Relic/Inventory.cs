@@ -10,27 +10,24 @@ namespace The_Relic
     {
         private List<Item> items;
 
-        private string description;
-
         public void Add(Item item)
         {
-
+            items.Add(item);
         }
         public void Remove(int n)
         {
-
+            items.RemoveAt(n);
         }
         public string GetItemInfo(int n)
         {
-            return description;
+
         }
-        public void UseItem(int n, Hero c)
+        public void UseItem(int n, Character c)
         {
 
         }
         public int GetLenght()
         {
-
         }
     }
 }
