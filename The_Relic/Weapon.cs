@@ -12,9 +12,9 @@ namespace The_Relic
 
         public new string GetInfo()
         {
-            return description;
+            return "Name: " + name + "\n Strenght: " + strenght;
         }
-        public new void Use(Hero target)
+        public void Use(Hero target)
         {
             strenght += target.strenght;
         }
