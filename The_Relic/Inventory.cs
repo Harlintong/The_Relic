@@ -20,7 +20,8 @@ namespace The_Relic
         }
         public string GetItemInfo(int n)
         {
-
+            n = 
+            return description;
         }
         public void UseItem(int n, Character c)
         {
@@ -28,6 +29,9 @@ namespace The_Relic
         }
         public int GetLenght()
         {
+            int lenght = items.Count;
+
+            return lenght;
         }
     }
 }

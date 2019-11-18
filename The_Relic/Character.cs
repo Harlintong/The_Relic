@@ -32,15 +32,15 @@ namespace The_Relic
         }
         public void UseItem(int n)
         {
-
+            inventory.UseItem(n);
         }
         public int GetInventoryLenght()
         {
-            inventory.GetLenght();
+            return inventory.GetLenght();
         }
         public string GetItemInfo(int n)
         {
-            inventory.GetItemInfo(n);
+            return inventory.GetItemInfo(n);
         }
         public int GetHp()
         {
@@ -56,10 +56,6 @@ namespace The_Relic
         public void Attack(Character target)
         {
 
-        }
-        public void Hurt(int amount)
-        {
-            hp -= amount;
         }
     }
 }
