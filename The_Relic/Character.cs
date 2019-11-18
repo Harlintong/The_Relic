@@ -16,21 +16,19 @@ namespace The_Relic
 
         public int mp;
 
-        public int level;
-
         public int strenght;
 
         public void AddToInventory(Item item)
         {
-
+            inventory.Add(item);
         }
         public void RemoveFromInventory(int n)
         {
-
+            inventory.Remove(n);
         }
         public void UseItem(int n, Character target)
         {
-
+            inventory.UseItem(n, target);
         }
         public void UseItem(int n)
         {
@@ -38,11 +36,11 @@ namespace The_Relic
         }
         public int GetInventoryLenght()
         {
-
+            inventory.GetLenght();
         }
         public string GetItemInfo(int n)
         {
-
+            inventory.GetItemInfo(n);
         }
         public int GetHp()
         {
@@ -53,10 +51,6 @@ namespace The_Relic
             hp += amount;
 
             return hp;
-
-        }
-        public void heal(int amount)
-        {
 
         }
         public void Attack(Character target)

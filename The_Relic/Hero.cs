@@ -8,12 +8,6 @@ namespace The_Relic
 {
     class Hero : Character
     {
-        int xp = 0;
-
-        int level = 1;
-
-
         
-
     }
 }
