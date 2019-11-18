@@ -11,7 +11,7 @@ namespace The_Relic
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Gray;
-
+            
             Hero MyHero = new Hero();
 
             GameTitel();
@@ -22,7 +22,7 @@ namespace The_Relic
             Console.WriteLine(MyHero.name + " and that your mission is to protect the world");
 
             Console.WriteLine("Before you there is a sword, you take it and it fuses with you");
-
+            
             Weapon BlackSword = new Weapon();
 
             BlackSword.name = "Ancient Sword";
