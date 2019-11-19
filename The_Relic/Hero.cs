@@ -8,6 +8,9 @@ namespace The_Relic
 {
     class Hero : Character
     {
-        
+        public void UseItem(int n, Hero target)
+        {
+            inventory.UseItem(n, target);
+        }
     }
 }

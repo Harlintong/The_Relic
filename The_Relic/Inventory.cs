@@ -8,7 +8,7 @@ namespace The_Relic
 {
     class Inventory
     {
-        private List<Item> items;
+        private List<Item> items = new List<Item>();
 
         public void Add(Item item)
         {
@@ -20,12 +20,13 @@ namespace The_Relic
         }
         public string GetItemInfo(int n)
         {
-            n = 
-            return description;
+            string ItemInfo = items[n].GetInfo();
+
+            return ItemInfo;
         }
         public void UseItem(int n, Character c)
         {
-
+            items[n].Use(c);
         }
         public int GetLenght()
         {

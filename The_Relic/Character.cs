@@ -10,7 +10,7 @@ namespace The_Relic
     {
         public string name;
 
-        protected Inventory inventory;
+        protected Inventory inventory = new Inventory();
 
         public int hp;
 
@@ -32,7 +32,7 @@ namespace The_Relic
         }
         public void UseItem(int n)
         {
-            inventory.UseItem(n);
+            inventory.UseItem(n, this);
         }
         public int GetInventoryLenght()
         {
