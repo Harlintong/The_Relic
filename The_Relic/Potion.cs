@@ -8,17 +8,23 @@ namespace The_Relic
 {
     class Potion : Item
     {
-        public int heal;
+        public int healthPoint;
+
+        public int amount;
 
         public new string GetInfo()
         {
-            return "Name: " + name + "\n Restore: " + heal;
+            return "Name: " + name + "\n Restore: " + healthPoint;
         }
 
         public void Use(Hero target)
         {
-            target.ModifyHp(heal);
-            Console.WriteLine("");
+            while (amount >= 0)
+            {
+                target.ModifyHp(healthPoint);
+                Console.WriteLine("You restored " + healthPoint + " health points");
+            }
+
         }
     }
 }

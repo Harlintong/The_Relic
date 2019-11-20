@@ -14,6 +14,7 @@ namespace The_Relic
         {
             return name;
         }
+
         public void Use(Character target)
         {
 
