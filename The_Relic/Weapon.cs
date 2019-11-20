@@ -14,6 +14,7 @@ namespace The_Relic
         {
             return "Name: " + name + "\n Strenght: " + strenght;
         }
+
         public void Use(Hero target)
         {
             strenght += target.strenght;
