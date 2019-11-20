@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace The_Relic
 {
-    class Enemy
+    class Enemy : Character
     {
+        public void Attack(Enemy target)
+        {
+            
+        }
     }
 }
