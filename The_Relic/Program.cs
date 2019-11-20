@@ -11,46 +11,53 @@ namespace The_Relic
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Gray;
-            
+
             Hero MyHero = new Hero();
             MyHero.hp = 100;
             MyHero.strenght = 20;
 
-            GameTitel();
+            while (MyHero.hp >= 0)
+            {
+                GameTitel();
 
-            Console.WriteLine("You wake up from your slumber, you don't remeber anything exept that your name is...\n");
-            Console.Write("Name: ");
-            MyHero.name = Console.ReadLine();
-            Console.WriteLine(MyHero.name + " and that your mission is to protect the world");
+                Console.WriteLine("You wake up from your slumber, you don't remeber anything exept that your name is...\n");
+                Console.Write("Name: ");
+                MyHero.name = Console.ReadLine();
+                Console.WriteLine(MyHero.name + " and that your mission is to protect the world");
 
-            Console.ReadLine();
+                Console.ReadLine();
 
-            Console.WriteLine("Before you there is a sword, you take it and it fuses with you");
-            
-            Weapon BlackSword = new Weapon();
+                Console.WriteLine("Before you there is a sword, you take it and it fuses with you");
 
-            BlackSword.name = "Ancient Sword";
-            BlackSword.strenght = 50;
-            MyHero.AddToInventory(BlackSword);
+                Weapon BlackSword = new Weapon();
 
-            Console.ReadLine();
+                BlackSword.name = "Ancient Sword";
+                BlackSword.strenght = 50;
+                MyHero.AddToInventory(BlackSword);
 
-            Console.WriteLine("You feel a strong connection to this sword");
-            Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("*You aquired " + BlackSword.name + ", it's now added to you inventory*"); Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ReadLine();
 
-            Console.WriteLine("You hear a loud roar from a village in the distance, you ran to there to see the situation\nIn the way there some villager where evacuating");
-            Console.WriteLine("The villagers told you that the village where being attacked by monsters\nyou started going to the village to help you when a woman stoped you and asked to help save their family and gave you some potions");
+                Console.WriteLine("You feel a strong connection to this sword");
+                Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("*You aquired " + BlackSword.name + ", it's now added to you inventory*"); Console.ForegroundColor = ConsoleColor.Gray;
 
-            Potion SRedPotion = new Potion();
-            SRedPotion.name = "Small red potion";
-            SRedPotion.heal = 10;
-            Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("*You aquired " + BlackSword.name + ", it's now added to you inventory*"); Console.ForegroundColor = ConsoleColor.Gray;
-            Console.ReadLine();
+                Console.WriteLine("You hear a loud roar from a village in the distance, you ran to there to see the situation\nIn the way there some villager where evacuating");
+                Console.WriteLine("The villagers told you that the village where being attacked by monsters\nyou started going to the village to help you when a woman stoped you and asked to help save their family and gave you some potions");
+
+                Potion grandRedPotion = new Potion();
+                grandRedPotion.name = "grand red potion";
+                grandRedPotion.healthPoint = 50;
+                MyHero.AddToInventory(grandRedPotion);
+                Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("*You aquired " + grandRedPotion.name + ", it's now added to you inventory*"); Console.ForegroundColor = ConsoleColor.Gray;
+                Console.ReadLine();
+            }
+
+            GameOver();
+
         }
 
         public static void GameTitel()
         {
-                Console.WriteLine(@"
+            Console.Write(@"
                 P
              P /\  P
             /\|  |/\
@@ -64,7 +71,7 @@ namespace The_Relic
      (       \::\/ -----___)
       (______  \/ _____)
 ");
-                Console.WriteLine(@"
+            Console.Write(@"
 _________          _______    _______  _______  _       _________ _______ 
 \__   __/|\     /|(  ____ \  (  ____ )(  ____ \( \      \__   __/(  ____ \
    ) (   | )   ( || (    \/  | (    )|| (    \/| (         ) (   | (    \/
@@ -80,14 +87,32 @@ _________          _______    _______  _______  _       _________ _______
             Console.ReadLine();
         }
 
-        public static void first()
+        public static void GameOver()
         {
-
+            Console.Write(@"
+          _____                    _____                    _____                    _____                           _______                   _____                    _____                    _____          
+         /\    \                  /\    \                  /\    \                  /\    \                         /::\    \                 /\    \                  /\    \                  /\    \         
+        /::\    \                /::\    \                /::\____\                /::\    \                       /::::\    \               /::\____\                /::\    \                /::\    \        
+       /::::\    \              /::::\    \              /::::|   |               /::::\    \                     /::::::\    \             /:::/    /               /::::\    \              /::::\    \       
+      /::::::\    \            /::::::\    \            /:::::|   |              /::::::\    \                   /::::::::\    \           /:::/    /               /::::::\    \            /::::::\    \      
+     /:::/\:::\    \          /:::/\:::\    \          /::::::|   |             /:::/\:::\    \                 /:::/~~\:::\    \         /:::/    /               /:::/\:::\    \          /:::/\:::\    \     
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/|::|   |            /:::/__\:::\    \               /:::/    \:::\    \       /:::/____/               /:::/__\:::\    \        /:::/__\:::\    \    
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/ |::|   |           /::::\   \:::\    \             /:::/    / \:::\    \      |::|    |               /::::\   \:::\    \      /::::\   \:::\    \   
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/  |::|___|______    /::::::\   \:::\    \           /:::/____/   \:::\____\     |::|    |     _____    /::::::\   \:::\    \    /::::::\   \:::\    \  
+ /:::/    /   \:::\ ___\  /:::/\:::\   \:::\    \  /:::/   |::::::::\    \  /:::/\:::\   \:::\    \         |:::|    |     |:::|    |    |::|    |    /\    \  /:::/\:::\   \:::\    \  /:::/\:::\   \:::\____\ 
+/:::/____/  ___\:::|    |/:::/  \:::\   \:::\____\/:::/    |:::::::::\____\/:::/__\:::\   \:::\____\        |:::|____|     |:::|    |    |::|    |   /::\____\/:::/__\:::\   \:::\____\/:::/  \:::\   \:::|    |
+\:::\    \ /\  /:::|____|\::/    \:::\  /:::/    /\::/    / ~~~~~/:::/    /\:::\   \:::\   \::/    /         \:::\    \   /:::/    /     |::|    |  /:::/    /\:::\   \:::\   \::/    /\::/   |::::\  /:::|____|
+ \:::\    /::\ \::/    /  \/____/ \:::\/:::/    /  \/____/      /:::/    /  \:::\   \:::\   \/____/           \:::\    \ /:::/    /      |::|    | /:::/    /  \:::\   \:::\   \/____/  \/____|:::::\/:::/    / 
+  \:::\   \:::\ \/____/            \::::::/    /               /:::/    /    \:::\   \:::\    \                \:::\    /:::/    /       |::|____|/:::/    /    \:::\   \:::\    \            |:::::::::/    /  
+   \:::\   \:::\____\               \::::/    /               /:::/    /      \:::\   \:::\____\                \:::\__/:::/    /        |:::::::::::/    /      \:::\   \:::\____\           |::|\::::/    /   
+    \:::\  /:::/    /               /:::/    /               /:::/    /        \:::\   \::/    /                 \::::::::/    /         \::::::::::/____/        \:::\   \::/    /           |::| \::/____/    
+     \:::\/:::/    /               /:::/    /               /:::/    /          \:::\   \/____/                   \::::::/    /           ~~~~~~~~~~               \:::\   \/____/            |::|  ~|          
+      \::::::/    /               /:::/    /               /:::/    /            \:::\    \                        \::::/    /                                      \:::\    \                |::|   |          
+       \::::/    /               /:::/    /               /:::/    /              \:::\____\                        \::/____/                                        \:::\____\               \::|   |          
+        \::/____/                \::/    /                \::/    /                \::/    /                         ~~                                               \::/    /                \:|   |          
+                                  \/____/                  \/____/                  \/____/                                                                            \/____/                  \|___|          
+                                                                                                                                                                                                                
+");
         }
-
-
-
-            
-        
     }
 }
