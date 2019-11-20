@@ -22,30 +22,42 @@ namespace The_Relic
         {
             inventory.Add(item);
         }
+
         public void RemoveFromInventory(int n)
         {
             inventory.Remove(n);
         }
+
         public void UseItem(int n, Character target)
         {
             inventory.UseItem(n, target);
         }
+
         public void UseItem(int n)
         {
             inventory.UseItem(n, this);
         }
+
+        public void SetCurrentWeapon()
+        {
+
+        }
+
         public int GetInventoryLenght()
         {
             return inventory.GetLenght();
         }
+
         public string GetItemInfo(int n)
         {
             return inventory.GetItemInfo(n);
         }
+
         public int GetHp()
         {
             return hp;
         }
+
         public int ModifyHp(int amount)
         {
             hp += amount;
@@ -53,9 +65,10 @@ namespace The_Relic
             return hp;
 
         }
+
         public void Attack(Character target)
         {
-
+            target.hp -= strenght;
         }
     }
 }
