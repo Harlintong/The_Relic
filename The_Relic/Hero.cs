@@ -12,5 +12,10 @@ namespace The_Relic
         {
             inventory.UseItem(n, target);
         }
+
+        public void Attack(Hero target)
+        {
+            
+        }
     }
 }
